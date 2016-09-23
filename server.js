@@ -47,7 +47,7 @@ app.get('/api', function api_index(req, res) {
   res.json({
     woopsIForgotToDocumentAllMyEndpoints: false, // CHANGE ME ;)
     message: "Welcome to my personal api! Here's what you need to know!",
-    documentationUrl: "https://github.com/kbbushman/express_self_api/README.md", // CHANGE ME
+    documentationUrl: "https://github.com/kbbushman/express-personal-api/blob/master/README.md", // CHANGE ME
     baseUrl: "https://safe-basin-43026..herokuapp.com", // CHANGE ME
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
@@ -66,7 +66,7 @@ app.get('/api/profile', function api_profile(req, res) {
   res.json({
     name: "Kenneth Bushman",
     githubLink: "https://github.com/kbbushman",
-    githubProfileImage: "https://github.com/kbbushman/express-personal-api/README.md",
+    githubProfileImage: "https://avatars0.githubusercontent.com/u/18340986?v=3&s=466",
     personalSiteLink: "http://k2sites.com",
     currentCity: "Fairfax",
     pets: [
