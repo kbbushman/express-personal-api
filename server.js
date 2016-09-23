@@ -66,7 +66,7 @@ app.get('/api/profile', function api_profile(req, res) {
   res.json({
     name: "Kenneth Bushman",
     githubLink: "https://github.com/kbbushman",
-    githubProfileImage: "https://github.com/kbbushman/express_self_api/README.md",
+    githubProfileImage: "https://github.com/kbbushman/express-personal-api/README.md",
     personalSiteLink: "http://k2sites.com",
     currentCity: "Fairfax",
     pets: [
