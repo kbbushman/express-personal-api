@@ -42,6 +42,7 @@ app.get('/', function homepage(req, res) {
  * JSON API Endpoints
  */
 
+// for Read My API Documentation
 app.get('/api', function api_index(req, res) {
   // TODO: Document all your api endpoints below
   res.json({
@@ -61,6 +62,7 @@ app.get('/api', function api_index(req, res) {
   })
 });
 
+// API profile page
 app.get('/api/profile', function api_profile(req, res) {
   // TODO: Document all your api endpoints below
   res.json({
@@ -74,6 +76,16 @@ app.get('/api/profile', function api_profile(req, res) {
       {name: "Chlo", type: "cat",  color: "calico"}
     ]
   })
+});
+
+
+// All Movies
+app.get('/api/movies', function (req, res) {
+  // send all movies as JSON response
+  db.Movie.find(function(err, movie){
+    if (err) { return console.log("index error: " + err); }
+    res.json(movie);
+  });
 });
 
 
