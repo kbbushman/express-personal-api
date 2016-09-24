@@ -79,12 +79,12 @@ app.get('/api/profile', function api_profile(req, res) {
 });
 
 
-// All Movies
+// get all movies
 app.get('/api/movies', function (req, res) {
   // send all movies as JSON response
-  db.Movie.find({}, function(err, movie){
+  db.Movie.find(function(err, movies){
     if (err) { return console.log("index error: " + err); }
-    res.json(movie);
+    res.json(movies);
   });
 });
 

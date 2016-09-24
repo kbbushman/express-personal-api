@@ -50,27 +50,18 @@ db.Movie.create(new_movie, function(err, movies){
   process.exit(); // we're all done! Exit the program.
 })
 
-/*
-PROFILE SEED
-***************************************/
+// remove all records that match {} -- which means remove ALL records
+db.Movie.remove({}, function(err, movies){
+  if(err) {
+    console.log('Error occurred in remove', err);
+  } else {
+    console.log('removed all movies');
 
-// var new_profile = {
-//     name: "Kenneth Bushman",
-//     githubLink: "https://github.com/kbbushman",
-//     githubProfileImage: "https://avatars0.githubusercontent.com/u/18340986?v=3&s=466",
-//     personalSiteLink: "http://k2sites.com",
-//     currentCity: "Fairfax",
-//     pets: [
-//       {name: "Fuzz Monkey", type: "cat",  color: "calico", specialAbility: "Super Softness"},
-//       {name: "Chlo", type: "cat",  color: "calico" specialAbility: "Telepathy"}
-//     ]
-// };
-
-// db.Profile.create(new_profile, function(err, profile){
-//   if (err){
-//     return console.log("Error:", err);
-//   }
-
-//   console.log("Created new profile", profile._id)
-//   process.exit(); // we're all done! Exit the program.
-// })
+    // create new records based on the array books_list
+    db.Movie.create(new_movie, function(err, movies){
+      if (err) { return console.log('err', err); }
+      console.log("created", movies.length, "movie");
+      process.exit();
+    });
+  }
+});
