@@ -2,7 +2,7 @@ var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
 
-var MovieSchema = new Movie({
+var MovieSchema = new Schema({
   title: String,
   moviePoster: String,
   releaseDate: String,
