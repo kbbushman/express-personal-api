@@ -41,7 +41,7 @@ var new_movie = [
 	},	
 ];
 
-db.Movies.create(new_movie, function(err, movies){
+db.Movie.create(new_movie, function(err, movies){
   if (err){
     return console.log("Error:", err);
   }
