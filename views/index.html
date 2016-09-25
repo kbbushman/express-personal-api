@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Blank</title>
+    <title>Kenny's API</title>
 
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -21,8 +21,22 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
-          <h1>Under Construction</h1>
+          <h1>Welcome to Kenny's API</h1>
           <h4><a href="/api">Read My API Documentation</a></h4>
+        </div>
+        <div id="movie-list">
+        <!-- handlebars template -->
+          <script id="movies-template" type="text/x-handlebars-template">
+            {{#each movies}}
+            <hr>
+            <p>
+              <b>{{title}}</b>
+              directed by {{director}}
+              {{releaseDate}}
+              <button type="button" name="button" class="deleteBtn btn btn-danger pull-right" data-id={{_id}}>Delete</button>
+            </p>
+            {{/each}}
+          </script>
         </div>
       </div>
     </div>

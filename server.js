@@ -72,8 +72,8 @@ app.get('/api/profile', function api_profile(req, res) {
     personalSiteLink: "http://k2sites.com",
     currentCity: "Fairfax",
     pets: [
-      {name: "Fuzz Monkey", type: "cat",  color: "calico", specialAbility: ""},
-      {name: "Chlo", type: "cat",  color: "calico"}
+      {name: "Fuzz Monkey", type: "cat",  color: "calico", specialAbility: "Super-crazy softness"},
+      {name: "Chlo", type: "cat",  color: "calico" specialAbility: "Telepathy"}
     ]
   })
 });
