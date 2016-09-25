@@ -54,7 +54,7 @@ db.Movie.remove({}, function(err, movies){
 	// create new records based on the array books_list
 	db.Movie.create(new_movie, function(err, movies){
 	  if (err) { return console.log('err', err); }
-	  	console.log("created", movies.length, "movie");
+	  	console.log("created", movies.length, "movies");
 	  	process.exit();
 	});
 	}

@@ -42,4 +42,4 @@ $(document).ready(function(){
 	// 	$('#movies-list').text('Unable to show movies...');
 	// };
 
-}); //end document ready
+});

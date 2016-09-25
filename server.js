@@ -30,9 +30,8 @@ var db = require('./models');
 app.use(express.static('public'));
 
 /*
- * HTML Endpoints
+ * HTML Endpoint
  */
-
 app.get('/', function homepage(req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
@@ -44,15 +43,14 @@ app.get('/', function homepage(req, res) {
 
 // for Read My API Documentation
 app.get('/api', function api_index(req, res) {
-  // TODO: Document all your api endpoints below
   res.json({
-    woopsIForgotToDocumentAllMyEndpoints: false, // CHANGE ME ;)
+    // woopsIForgotToDocumentAllMyEndpoints: false,
     message: "Welcome to my personal api! Here's what you need to know!",
-    documentationUrl: "https://github.com/kbbushman/express-personal-api/blob/master/README.md", // CHANGE ME
-    baseUrl: "https://safe-basin-43026.herokuapp.com/", // CHANGE ME
+    documentationUrl: "https://github.com/kbbushman/express-personal-api/blob/master/README.md",
+    baseUrl: "https://safe-basin-43026.herokuapp.com/",
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
-      {method: "GET", path: "/api/profile", description: "Shows A little info about me...."}, // CHANGE ME
+      {method: "GET", path: "/api/profile", description: "Shows A little info about me...."},
       {method: "GET", path: "/api/movies", description: "Shows a list of all movies I like"},
       {method: "GET", path: "/api/movies/:id", description: "Shows one movie I like by id"},
       {method: "POST", path: "/api/movies", description: "Adds a new movie to the list"},
@@ -64,7 +62,6 @@ app.get('/api', function api_index(req, res) {
 
 // API profile page
 app.get('/api/profile', function api_profile(req, res) {
-  // TODO: Document all your api endpoints below
   res.json({
     name: "Kenneth Bushman",
     githubLink: "https://github.com/kbbushman",
@@ -72,8 +69,8 @@ app.get('/api/profile', function api_profile(req, res) {
     personalSiteLink: "http://k2sites.com",
     currentCity: "Fairfax",
     pets: [
-      {name: "Fuzz Monkey", type: "cat",  color: "calico", specialAbility: "Super-crazy softness"},
-      {name: "Chlo", type: "cat",  color: "calico" specialAbility: "Telepathy"}
+      {name: "Fuzz Monkey", type: "cat",  color: "calico", specialAbility: "Invisibility"},
+      {name: "Chlo", type: "cat",  color: "calico", specialAbility: "Telepathy"}
     ]
   })
 });
