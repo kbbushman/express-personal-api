@@ -6,7 +6,7 @@ var allMovies = [];
 
 $(document).ready(function(){
 
-	$moviesList = $('#movies-list');
+	$moviesList = $('#movie-list');
 
 	// compile handlebars template
 	var source = $('#movies-template').html();
