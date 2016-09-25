@@ -15,10 +15,11 @@
 // })
 
 
+var db = require('./models');
+
 /*
 MOVIES SEED
 ***************************************/
-var db = require('./models');
 
 var new_movie = [
 	{
@@ -43,27 +44,18 @@ var new_movie = [
 	}
 ];
 
-// db.Movie.create(new_movie, function(err, movies){
-//   if (err){
-//     return console.log("Error:", err);
-//   }
-
-//   console.log("Created 2 new movies", movies)
-//   process.exit(); // we're all done! Exit the program.
-// })
-
 // remove all records that match {} -- which means remove ALL records
 db.Movie.remove({}, function(err, movies){
-  if(err) {
-    console.log('Error occurred in remove', err);
-  } else {
-    console.log('removed all movies');
+	if(err) {
+		console.log('Error occurred in remove', err);
+	} else {
+		console.log('removed all movies');
 
-    // create new records based on the array books_list
-    db.Movie.create(new_movie, function(err, movies){
-      if (err) { return console.log('err', err); }
-      console.log("created", movies.length, "movie");
-      process.exit();
-    });
-  }
+	// create new records based on the array books_list
+	db.Movie.create(new_movie, function(err, movies){
+	  if (err) { return console.log('err', err); }
+	  	console.log("created", movies.length, "movie");
+	  	process.exit();
+	});
+	}
 });
