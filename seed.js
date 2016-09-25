@@ -24,22 +24,22 @@ MOVIES SEED
 var new_movie = [
 	{
 	title: "Enter The Dragon",
-	director: "Bruce Lee",
+	directedBy: "Bruce Lee",
 	releaseDate: "August 19, 1973"
 	},
 	{
 	title: "Robocop",
-	director: "Paul Verhoeven",
+	directedBy: "Paul Verhoeven",
 	releaseDate: "July 17, 1987"
 	},
 	{
 	title: "Goodfellas",
-	director: "Martin Scorsese",
+	directedBy: "Martin Scorsese",
 	releaseDate: "September 19, 1990"
 	},
 	{
 	title: "Pulp Fiction",
-	director: "Quentin Tarantino",
+	directedBy: "Quentin Tarantino",
 	releaseDate: "October 14, 1994"
 	}
 ];
