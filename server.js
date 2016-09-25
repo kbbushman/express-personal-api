@@ -85,6 +85,17 @@ app.get('/api/movies', function (req, res) {
   });
 });
 
+// get one movie by id
+app.get('/api/movies/:id', function (req, res) {
+  // find one book by its id
+  var searchMovieId = req.params.id;
+
+  // find book in db by id
+  db.Movie.findOne({ _id: searchMovieId }, function(err, foundBook) {
+    res.json(foundMovie);
+  });    
+});
+
 
 /**********
  * SERVER *
