@@ -76,7 +76,7 @@ app.get('/api/profile', function api_profile(req, res) {
 });
 
 
-// get all movies
+// find all movies
 app.get('/api/movies', function (req, res) {
   // send all movies as JSON response
   db.Movie.find(function(err, movies){
@@ -85,14 +85,33 @@ app.get('/api/movies', function (req, res) {
   });
 });
 
-// get one movie by id
+// find one movie by id
 app.get('/api/movies/:id', function (req, res) {
   var searchMovieId = req.params.id;
-
-  // find movie in db by id
   db.Movie.findOne({ _id: searchMovieId }, function(err, foundMovie) {
     res.json(foundMovie);
   });    
+});
+
+// create a new movie
+app.post('/api/movies', function (req, res) {
+  // create a new movie with form data (`req.body`)
+  console.log('movies create', req.body);
+  var newMovie = new db.Movie(req.body);
+  newMovie.save(function handleDBMovieSaved(err, savedMovie) {
+    res.json(savedMovie);
+  });
+});
+
+// delete a movie
+app.delete('/api/movies/:id', function (req, res) {
+  // get movie id from url params (`req.params`)
+  console.log('movies delete', req.params);
+  var movieId = req.params.id;
+  // find the index of the book we want to remove
+  db.Movie.findOneAndRemove({ _id: movieId }, function (err, deletedMovie) {
+    res.json(deletedMovie);
+  });
 });
 
 
