@@ -90,7 +90,7 @@ app.get('/api/movies/:id', function (req, res) {
   var searchMovieId = req.params.id;
 
   // find movie in db by id
-  db.Movie.findOne({ _id: searchMovieId }, function(err, foundBook) {
+  db.Movie.findOne({ _id: searchMovieId }, function(err, foundMovie) {
     res.json(foundMovie);
   });    
 });
