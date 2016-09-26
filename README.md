@@ -36,6 +36,5 @@ Current JSON API Endpoints:
 ### Installation Instructions
 
 * Copy the conents of this repository to new directory on your computer (Mac/PC).
-* In terminal, run node install.
+* In terminal, run node install in root directory.
 
----
