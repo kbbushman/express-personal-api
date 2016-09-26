@@ -29,7 +29,7 @@
     </header>
 
     <!-- movie-container -->
-    <div class="movie-container">
+    <div id="movie-container">
       <div id="movie-list">
         <!-- handlebars template -->
         <script id="movies-template" type="text/x-handlebars-template">
@@ -41,7 +41,7 @@
                 <p class="directed-by"><strong>Directed by</strong>: {{directedBy}}</p>
                 <p class="release-date"><strong>Released on</strong>: {{releaseDate}}</p>
                 <p class="imdb-page"><a href="{{imdbPage}}" target="_blank">See details on IMDb</a></p>
-                <button type="button" name="button" class="deleteBtn btn delete-movie-submit" data-id={{_id}}>Delete</button>
+                <button type="button" name="button" class="deleteBtn btn delete-movie-submit" data-id="{{_id}}">Delete</button>
               </div>
             </div>
           {{/each}}
