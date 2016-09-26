@@ -1,69 +1,108 @@
+/*
+  Site Name: Kenny's Movie Board
+  Site URI: https://safe-basin-43026.herokuapp.com/
+  Description: My first Express API app
+  Author: K2 Sites
+  Author URI: http://k2sites.com/
+
+  Version: 1.0
+ 
+  Tags: black, grey, white, two-columns, three-columns, responsive-layout, full-width-template
+*/
+
+/*
+HTML5 Reset
+---------------------------------------------------------------------------------------------------- */
+
+/* Baseline Normalize
+  normalize.css v2.1.3 | MIT License | git.io/normalize
+--------------------------------------------- */
+
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls])
+{display:none;height:0}[hidden],template{display:none}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+body{margin:0}a{background:transparent}a:focus{outline:0}a:active,a:hover{outline:0}h1{font-size:2em;margin:.67em 0}abbr[title]{border-bottom:1px dotted}b,strong
+{font-weight:700}dfn{font-style:italic}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}mark{background:#ff0;color:#2e2f33}code,kbd,pre,samp
+{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup
+{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset
+{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input
+{line-height:normal}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=search]
+{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration
+{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}
+
+
 body {
+  font-family: 'Open Sans', sans-serif;
   color: #333;
-  font-family: Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   background-color: #fff;
 }
 
+/* Links
+************************************************/
+
+a {
+  color: #337ab7 !important;
+  text-decoration: none;
+}
+
+a:hover,
+a:visited {
+  color: #337ab7;
+  text-decoration: underline;
+}
+
 /* Typography
 ************************************************/
 
-strong {
-  font-weight: 700;
-}
-
-#header-container h1 {
-  font-size: 38px;
-  line-height: 1.4;
-  font-weight: 600;
-  padding: 0;
-  margin: 60px 0 0;
-  text-align: left;
-}
-
-.documentation: {
-  text-align: left;
-}
-
-.movie-box-inner h2 {
-  font-size: 18px;
-  line-height: 1.5;
-  font-weight: 600;
-  color: #444;
-  text-align: center;
+p {
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  font-size: 15px;
+  line-height: 1.6;
   padding: 0;
   margin: 0 0 15px;
 }
 
-.directed-by {
-  font-size: 14px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
   line-height: 1.4;
-  font-weight: 400;
-  color: #444;
-  text-align: center;
-  padding: 0;
-  margin: 0 0 5px;
+  margin: 0 0 20px;
 }
 
-.release-date {
-  font-size: 14px;
-  line-height: 1.4;
-  font-weight: 400;
-  color: #444;
-  text-align: center;
-  padding: 0;
-  margin: 0 0 5px;
+h1 {
+  font-size: 36px;
 }
 
-.imdb-page {
-  font-size: 14px;
-  line-height: 1.4;
-  font-weight: 400;
-  color: #444;
-  text-align: center;
-  padding: 0;
-  margin: 0 0 30px;
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+strong {
+  font-weight: 700;
 }
 
 /* Inputs and Buttons
@@ -138,7 +177,7 @@ input[type="submit"],
   float: none;
 }
 
-/* Layout
+/* Header
 ************************************************/
 
 header {
@@ -149,27 +188,23 @@ header {
 
 #header-container {
   max-width: 1120px;
-  padding: 0;
+  padding: 0 20px;
   margin: 0 auto;
 }
 
-#new-movie-form {
-  max-width: 660px;
-  margin: 100px auto 60px;
-  overflow: hidden;
-}
-
-.form-float {
-  width: 200px;
+#header-container h1 {
+  font-family: 'Black Ops One', cursive;
+  font-size: 38px;
+  line-height: 1.4;
+  font-weight: 600;
+  color: #000;
   padding: 0;
-  margin: 0 20px 15px 0;
-  float: left;
+  margin: 40px 0 0;
+  text-align: left;
 }
 
-.form-block {
-  width: 100%;
-  margin: 0 0 15px;
-}
+/* Movie List Section Layout
+************************************************/
 
 .movie-container {
   background: #000;
@@ -184,10 +219,9 @@ header {
 
 #movie-list {
   max-width: 1120px;
-  padding: 30px 0 10px;
+  padding: 30px 0 0;
   margin: 60px auto;
 }
-
 
 .movie-box-outer {
   word-spacing: 0;
@@ -217,25 +251,100 @@ header {
   height: 100%;
 }
 
+.movie-box-inner h2 {
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 600;
+  color: #444;
+  text-align: center;
+  padding: 0;
+  margin: 0 0 15px;
+}
+
+.directed-by {
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 400;
+  color: #444;
+  text-align: center;
+  padding: 0;
+  margin: 0 0 5px;
+}
+
+.release-date {
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 400;
+  color: #444;
+  text-align: center;
+  padding: 0;
+  margin: 0 0 5px;
+}
+
+.imdb-page {
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 600;
+  color: #444;
+  text-align: center;
+  padding: 0;
+  margin: 0 0 30px;
+}
+
+/* Movie Form Section Layout
+************************************************/
+
+#new-movie-form {
+  max-width: 700px;
+  padding: 0 20px;
+  margin: 100px auto 60px;
+  overflow: hidden;
+}
+
+.form-float {
+  width: 200px;
+  padding: 0;
+  margin: 0 20px 15px 0;
+  float: left;
+}
+
+.form-block {
+  width: 100%;
+  margin: 0 0 15px;
+}
+
+
+/* Footer
+************************************************/
+
 footer {
   background: #000;
   width: 100%;
-  font-size: 15px;
-  line-height: 1.4;
-  font-weight: 300;
-  text-align: center;
-  color: #fff;
-  padding: 60px 0 50px;
+  padding: 60px 20px 50px;
   margin: 80px 0 0;
   border-top: 10px solid #444;
 }
 
+footer p {
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 400;
+  text-align: center;
+  color: #337ab7;
+  word-spacing: 2px;
+}
+
 footer a {
-  color: #FFF;
   text-decoration: none;
 }
 
 footer a:hover {
   color: #FFF;
   text-decoration: underline;
+}
+
+.documentation {
+  display: inline-block;
+  margin: 0 0 0 15px;
+  text-align: left;
 }

@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="/styles/styles.css">
 
+    <!-- GOOGLE FONTS -->
+     <link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+
     <!-- VENDOR SCRIPTS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
@@ -22,10 +26,10 @@
     <header>
       <div id="header-container">
         <h1>Kenny's Movie Board</h1>
-        <p class="documentation"><a href="/api">Read My API Documentation</a></p>
       </div>
     </header>
 
+    <!-- movie-container -->
     <div class="movie-container">
       <div id="movie-list">
         <!-- handlebars template -->
@@ -45,9 +49,9 @@
         </script>
       </div> 
     </div>
-    <!-- end #movie-container -->
+    <!-- end movie-container -->
 
-    <!-- Add a new movie form -->
+    <!-- new movie form -->
     <div id="new-movie-form">
       <form id="newMovieForm">
         <div class="form-float">
@@ -60,25 +64,26 @@
         </div>
         <div class="form-float">
           <label for="title">Release Date</label>
-          <input type="text" name="releaseDate" placeholder="Release Date" required />
+          <input type="text" name="releaseDate" placeholder="mm/dd/yyyy" required />
         </div>
         <div class="form-block">
           <label for="title">Poster URL</label>
-          <input type="text" name="poster" placeholder="Poster URL" required />
+          <input type="text" name="poster" placeholder="http://poster-url" required />
         </div>
         <div class="form-block">
           <label for="title">IMDb URL</label>
-          <input type="text" name="imdbPage" placeholder="IMDb URL" required />
+          <input type="text" name="imdbPage" placeholder="http://imdb-url" required />
         </div>
         <button type="submit" class="new-movie-submit">Add New Movie</button>
       </form>
     </div>
-    <!-- End #new-movie-form -->
+    <!-- end new movie form -->
 
+    <!-- footer -->
     <footer>
-      <p>Copyright &copy; 2016 <a href="http://k2sites.com/" target="_blank">K2 Sites</a></p>
+      <p>Copyright &copy; 2016 <a href="http://k2sites.com/" target="_blank">K2 Sites</a>. All Rights Reserved. <span class="documentation">|</span> <span class="documentation"><a href="/api">Read My API Documentation</a></span></p>
     </footer>
-    <!-- End #Footer -->
+    <!-- end footer -->
 
   </body>
 </html>
