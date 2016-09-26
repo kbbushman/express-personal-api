@@ -29,6 +29,7 @@ Current JSON API Endpoints:
 ### Project Roadmap
 
 * Add a form for updating movie data.
+* Clear form data on submission.
 
 ---
 
