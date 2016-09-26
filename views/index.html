@@ -7,7 +7,6 @@
     <title>Kenny's Movie Board</title>
 
     <!-- STYLESHEETS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="/styles/styles.css">
 
     <!-- GOOGLE FONTS -->
@@ -42,7 +41,7 @@
                 <p class="directed-by"><strong>Directed by</strong>: {{directedBy}}</p>
                 <p class="release-date"><strong>Released on</strong>: {{releaseDate}}</p>
                 <p class="imdb-page"><a href="{{imdbPage}}" target="_blank">See details on IMDb</a></p>
-                <button type="button" name="button" class="deleteBtn btn btn-danger delete-movie-submit" data-id={{_id}}>Delete</button>
+                <button type="button" name="button" class="delete-movie-submit" data-id={{_id}}>Delete</button>
               </div>
             </div>
           {{/each}}
@@ -62,7 +61,7 @@
           <label for="title">Director</label>
           <input type="text" name="directedBy" placeholder="Director" required />
         </div>
-        <div class="form-float">
+        <div class="form-float form-last">
           <label for="title">Release Date</label>
           <input type="text" name="releaseDate" placeholder="mm/dd/yyyy" required />
         </div>
@@ -81,7 +80,7 @@
 
     <!-- footer -->
     <footer>
-      <p>Copyright &copy; 2016 <a href="http://k2sites.com/" target="_blank">K2 Sites</a>. All Rights Reserved. <span class="documentation">|</span> <span class="documentation"><a href="/api">Read My API Documentation</a></span></p>
+      <p>Copyright &copy; 2016 <a href="http://k2sites.com/" target="_blank">K2 Sites</a>. All Rights Reserved. <span class="footer-pipe">|</span> <a href="/api" target="_blank">API Documentation</a><span class="footer-pipe">|</span> <a href="/api/profile" target="_blank">My API Profile</a></p>
     </footer>
     <!-- end footer -->
 
