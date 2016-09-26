@@ -26,16 +26,15 @@ var db = require('./models');
  **********/
 
 // Serve static files from the `/public` directory:
-// i.e. `/images`, `/scripts`, `/styles`
 app.use(express.static('public'));
 
 /*
  * HTML Endpoint
  */
+
 app.get('/', function homepage(req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
-
 
 /*
  * JSON API Endpoints
@@ -75,10 +74,8 @@ app.get('/api/profile', function api_profile(req, res) {
   })
 });
 
-
 // find all movies
 app.get('/api/movies', function (req, res) {
-  // send all movies as JSON response
   db.Movie.find(function(err, movies){
     if (err) { return console.log("index error: " + err); }
     res.json(movies);
@@ -95,7 +92,6 @@ app.get('/api/movies/:id', function (req, res) {
 
 // create a new movie
 app.post('/api/movies', function (req, res) {
-  // create a new movie with form data (`req.body`)
   console.log('movies create', req.body);
   var newMovie = new db.Movie(req.body);
   newMovie.save(function handleDBMovieSaved(err, savedMovie) {
@@ -103,17 +99,27 @@ app.post('/api/movies', function (req, res) {
   });
 });
 
+// update a movie
+app.put('/api/movies/:id', function(req,res){
+  console.log('movies update', req.params);
+  var movieId = req.params.id;
+  var updateMovieIndex = db.Movie.findIndex(function(element, index) {
+    return (element._id === parseInt(req.params.id)); //params are strings
+  });
+  console.log('updating movie...', deleteMovieIndex);
+  var movieToUpdate = db.Movie[deleteMovieIndex];
+  db.Movie.splice(updateMovieIndex, 1, req.params);
+  res.json(req.params);
+});
+
 // delete a movie
 app.delete('/api/movies/:id', function (req, res) {
-  // get movie id from url params (`req.params`)
   console.log('movies delete', req.params);
   var movieId = req.params.id;
-  // find the index of the book we want to remove
   db.Movie.findOneAndRemove({ _id: movieId }, function (err, deletedMovie) {
     res.json(deletedMovie);
   });
 });
-
 
 /**********
  * SERVER *
